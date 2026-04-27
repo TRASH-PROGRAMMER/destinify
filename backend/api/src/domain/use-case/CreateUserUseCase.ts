@@ -8,3 +8,4 @@ export class CreateUserUseCase {
     return await this.repo.create(data);
   }
 }
+export default CreateUserUseCase;

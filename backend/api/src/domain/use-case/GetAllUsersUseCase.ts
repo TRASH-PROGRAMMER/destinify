@@ -1,4 +1,4 @@
-import { PgUserRepository } from "../interfaces/PgUserRepository";
+import { PgUserRepository } from "../../infrastructure/repositories/PgUserRepository";
 import { User } from "../entities/User";
 // definicion de la clase UseCase
 export class GetAllUsersUseCase {

@@ -87,7 +87,7 @@ Recomendaciones contextuales
 4. 🗄️ Base de Datos
 Motor: PostgreSQL
 Contenerización: Docker
-ORM: TypeORM
+ORM: pg
 Funciones:
 Gestión de usuarios
 Almacenamiento de itinerarios
@@ -103,6 +103,12 @@ diagrama entidad relacion:
 | Servicio - Reserva    | 1:N  | Gestión de reservas             |
 | Usuario - Feedback    | 1:N  | Mejora continua del sistema     |
 
+Enfoque de Esquemas (Separación lógica)
+Si quieres tener las cosas más organizadas sin crear múltiples bases de datos, PostgreSQL te permite crear esquemas (schemas) dentro de la misma base de datos destinify_db:
+
+Esquema auth: contiene las tablas de usuarios.
+Esquema travel: contiene tablas de itinerarios e historial.
+Esquema interactions: contiene el feedback.
 
 🔗 Comunicación entre servicios
 API ↔ IA → HTTP (REST)

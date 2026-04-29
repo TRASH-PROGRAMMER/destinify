@@ -1,4 +1,4 @@
-import { pool } from "../../infrastructure/database/db";
+import { pool } from "../database/db";
 import { User } from "../../domain/entities/User";
 import { UserRepository } from "../../domain/interfaces/UserRepository";
 // clase para implementar el repositorio

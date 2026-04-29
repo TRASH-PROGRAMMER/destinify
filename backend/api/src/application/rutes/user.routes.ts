@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { UserController } from "../../infrastructure/controllers/user.controller";
 import { CreateUserUseCase } from "../../domain/use-case/CreateUserUseCase";
-import { PgUserRepository } from "../../domain/interfaces/PgUserRepository";
+import { PgUserRepository } from "../../infrastructure/repositories/PgUserRepository";
 import { GetAllUsersUseCase } from "../../domain/use-case/GetAllUsersUseCase";
 
 const router = Router();

@@ -10,15 +10,15 @@ import serviceRoutes from "./application/rutes/service.routes";
 import reservationRoutes from "./application/rutes/reservation.routes";
 import iaRoutes from "./application/rutes/ia.routes";
 import felbackRoutes from "./application/rutes/felback.routes";
-
+// configuracion de variables de entorno
 dotenv.config();
-
+// configuracion del servidor
 const app = express();
-
+// configuracion de middleware
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
-
+// configuracion de rutas
 app.use("/api/users", userRoutes);
 app.use("/api/destinations", destinationRoutes);
 app.use("/api/itineraries", itineraryRoutes);
@@ -26,7 +26,7 @@ app.use("/api/services", serviceRoutes);
 app.use("/api/reservations", reservationRoutes);
 app.use("/api/ia", iaRoutes);
 app.use("/api/felback", felbackRoutes);
-
+// salud del api
 app.get("/api/health", (_req, res) => {
   res.json({
     status: "success",
@@ -34,5 +34,5 @@ app.get("/api/health", (_req, res) => {
     timestamp: new Date().toISOString(),
   });
 });
-
+// exportacion del servidor
 export default app;

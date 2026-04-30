@@ -8,4 +8,5 @@ export class GetAllUsersUseCase {
     return  await this.UserRepository.findAll();
   }
 }
+// exportacion de la clase UseCase
 export default GetAllUsersUseCase;

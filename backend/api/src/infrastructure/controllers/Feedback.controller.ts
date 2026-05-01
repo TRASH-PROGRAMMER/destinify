@@ -1,9 +1,14 @@
 import { Request, Response } from "express";
 import { CreateFeedbackUseCase } from "../../domain/use-case/CreateFeedbackUseCase";
+import { Feedback } from "../../domain/entities/Feedback";
+import { GetAllFeedbackUseCase } from "../../domain/use-case/GetAllFeedbackUseCase";
 // Definicion de la clase controller
 export class FeedbackController {
-    constructor(private readonly createFeedback: CreateFeedbackUseCase) {}
-    private readonly getAllUseCase: CreateFeedbackUseCase;
+    constructor(private readonly createFeedback: CreateFeedbackUseCase,
+      private readonly getAllUseCase: GetAllFeedbackUseCase
+    ) {
+  }
+   
       // metodo para crear feedback
       async create(req: Request, res: Response) {
         try {
@@ -21,6 +26,7 @@ export class FeedbackController {
       async getAll(_req: Request, res: Response) {
         try {
           const feedback = await this.getAllUseCase.execute();
+          console.log("ESTO ES LO QUE TRAE ",feedback);
           res.json(feedback);
         } catch (error) {
             if (error instanceof Error) {

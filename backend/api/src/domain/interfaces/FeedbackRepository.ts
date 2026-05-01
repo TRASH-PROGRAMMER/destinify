@@ -1,10 +1,10 @@
-import { Felback } from "../entities/Feedback";
+import { Feedback } from "../entities/Feedback";
 // definicion de la interfaz repository
 export interface FeedbackRepository {
   // metodo para crear feedback
-  create(felback: Felback): Promise<Felback>;
+  create(feedback: Feedback): Promise<Feedback>;
   // metodo para obtener todos los feedbacks
-  findAll(): Promise<Felback[]>;
+  findAll(): Promise<Feedback[]>;
 }
 // exportacion de la interfaz
 export default FeedbackRepository;

@@ -1,9 +1,23 @@
-export class Felback {
+export class Feedback {
     constructor(
         public id_felback: number,
-        public feedback: string
+        public user_id: number,
+        public service_id: number,
+        public rating: number,
+        public comentario: string,
+       
     ){}
 }
 export type CreateFelbackDTO = {
-    feedback: string;
+    user_id: number;
+    service_id: number;
+    rating: number;
+    comentario: string;
+}
+export type UpdateFelbackDTO = {
+    id_felback: number;
+    user_id?: number;
+    service_id?: number;
+    rating?: number;
+    comentario?: string;
 }

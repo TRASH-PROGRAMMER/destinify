@@ -95,13 +95,24 @@ Historial de viajes
 Preferencias del usuario
 diagrama entidad relacion:
 
-| Relación              | Tipo | Descripción                     |
-| --------------------- | ---- | ------------------------------- |
-| Usuario - Perfil      | 1:1  | Personalización del viajero     |
-| Usuario - Itinerario  | 1:N  | Múltiples viajes                |
-| Itinerario - Servicio | N:M  | Servicios dentro del itinerario |
-| Servicio - Reserva    | 1:N  | Gestión de reservas             |
-| Usuario - Feedback    | 1:N  | Mejora continua del sistema     |
+| Relación               | Tipo |
+| ---------------------- | ---- |
+| User → TravelerProfile | 1:1  |
+| User → Role            | N:M  |
+| User → Itinerary       | 1:N  |
+| User → Booking         | 1:N  |
+| User → Feedback        | 1:N  |
+| User → Notification    | 1:N  |
+| User → AIConversation  | 1:N  |
+| User → Interest        | N:M  |
+| Destination → Service  | 1:N  |
+| Provider → Service     | 1:N  |
+| Guide → TourService    | 1:N  |
+| Itinerary → Service    | N:M  |
+| Service → Booking      | 1:N  |
+| Booking → Payment      | 1:1  |
+| Service → Feedback     | 1:N  |
+
 
 Enfoque de Esquemas (Separación lógica)
 Si quieres tener las cosas más organizadas sin crear múltiples bases de datos, PostgreSQL te permite crear esquemas (schemas) dentro de la misma base de datos destinify_db:

@@ -303,9 +303,8 @@ Encargado de ofrecer experiencias y tours personalizados.
 - evitar los errores de tiempo
 - evitar los errores de red
 - evitar los errores de memoria
-- evitar los errores de CPU
-- evitar los errores de disco
-- evitar los errores de red
+
+
 
 ### Técnicos
 

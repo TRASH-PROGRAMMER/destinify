@@ -1,6 +1,6 @@
 - **Frontend Destinify con Vue**
 
-### ⚙️ Stack recomendado
+### ⚙️ Stack 
 
 - **Framework** → Vue.js
 

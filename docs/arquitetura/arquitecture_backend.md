@@ -51,8 +51,11 @@ api/
 ├── .env
 └── package.json
 2. 🧠 Servicio de IA
-Tecnología: Python + Flask + mcpserver + provedor + tools
+Tecnología: Python + Flask + mcpserver + provedor(gemini) + tools
 Arquitectura: Clean Architecture + Hexagonal
+Separación de responsabilidades
+Escalabilidad progresiva
+Modularidad
 📁 Estructura interna
 src/
 ├── domain/
@@ -145,7 +148,7 @@ TypeScript
 IA
 Python
 Flask
-Scikit-learn (u otros modelos ML)
+mcp serves + tools + gemini  
 Base de datos
 PostgreSQL
 TypeORM
@@ -155,8 +158,7 @@ Infraestructura
 Docker
 Docker Compose
 🧠 Enfoque Arquitectónico
-Clean Architecture
-Arquitectura Hexagonal
+Clean Architecture + Arquitectura Hexagonal
 Separación de responsabilidades
 Escalabilidad progresiva
 Modularidad

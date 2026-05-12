@@ -6,11 +6,11 @@ services:
     container_name: destinify_db
     restart: always
     environment:
-      POSTGRES_USER: destinify_user       # Usuario de la base de datos
-      POSTGRES_PASSWORD: destinify_password # Contraseña de la base de datos
-      POSTGRES_DB: destinify_db           # Nombre de la base de datos
+      POSTGRES_USER: destinify_user
+      POSTGRES_PASSWORD: destinify_password
+      POSTGRES_DB: destinify_db
     ports:
-      - "5432:5432"                       # Mapeo del puerto para acceder desde tu máquina local
+      - "5437:5432"                       # Mapeo del puerto para acceder desde tu máquina local
     volumes:
       - postgres_data:/var/lib/postgresql/data # Volumen para persistir los datos
 

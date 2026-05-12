@@ -9,7 +9,7 @@ export class DestinationController {
         private readonly getAllUseCase: GetAllDestinationUseCase
     ) {}
     // metodo para crear destino
-    async create(req: Request, res: Response) {
+    create = async (req: Request, res: Response) => {
         try {
             const destination = await this.createDestination.execute(req.body);
             res.json(destination);
@@ -22,7 +22,7 @@ export class DestinationController {
         }
     }
     // metodo para obtener todos los destinos
-    async getAll(_req: Request, res: Response) {
+    getAll = async (_req: Request, res: Response) => {
         try {
             const destination = await this.getAllUseCase.execute();
             res.json(destination);

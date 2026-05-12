@@ -11,7 +11,7 @@ const getAllUseCase = new GetAllDestinationUseCase(repo);
 const controller = new DestinationController(useCase,getAllUseCase);
 
 // ruta para obtener todos los destinos
-router.get("/destinations", controller.getAll);
-router.post("/destinations", controller.create);
+router.get("/", (req, res) => controller.getAll(req, res));
+router.post("/", (req, res) => controller.create(req, res));
 
 export default router;

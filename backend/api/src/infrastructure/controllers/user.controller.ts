@@ -12,7 +12,7 @@ export class UserController {
     res.json(result);
   };
   // metodo para obtener todos los usuarios
-  async getAll(_req:any,res:any){
+  getAll = async (_req:any,res:any) => {
     try{
       const users = await this.getAllUsersUseCase.execute();
       res.status(200).json(users);

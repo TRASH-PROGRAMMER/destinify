@@ -1,18 +1,37 @@
 export class User {
   constructor(
-    public id_user: number,
     public email: string, 
-    public password: string,
-    public createdAt: Date) {}
+    public password_hash: string,
+    public id?: number,
+    public name?: string,
+    public lastname?: string,
+    public phone?: string,
+    public avatar_url?: string,
+    public country?: string,
+    public preferred_language?: string,
+    public timezone?: string,
+    public status?: string,
+    public last_login?: Date,
+    public created_at?: Date,
+    public updated_at?: Date
+  ) {}
 }
 
 export type CreateUserDTO = {
   email: string;
-  password: string;
-  createdAt: Date;
+  password_hash: string;
+  name?: string;
+  lastname?: string;
 };
+
 export type UpdateUserDTO = {
-  email?: string;
-  password?: string;
-  createdAt?: Date;
+  name?: string;
+  lastname?: string;
+  phone?: string;
+  avatar_url?: string;
+  country?: string;
+  preferred_language?: string;
+  timezone?: string;
+  status?: string;
+  last_login?: Date;
 };

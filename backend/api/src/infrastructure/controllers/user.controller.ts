@@ -9,6 +9,7 @@ export class UserController {
 // metodo para crear usuario
   create = async (req: Request, res: Response) => {
     const result = await this.createUser.execute(req.body);
+    console.log(req.body);
     res.json(result);
   };
   // metodo para obtener todos los usuarios

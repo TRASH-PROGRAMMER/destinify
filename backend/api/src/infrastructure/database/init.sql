@@ -32,3 +32,12 @@ CREATE TABLE destinations (
     popularity_score NUMERIC(4, 2) DEFAULT 0.00,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE user_rol (
+    id SERIAL PRIMARY KEY,
+    user_id INT NOT NULL,
+    rol_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (rol_id) REFERENCES roles(id)
+);

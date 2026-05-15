@@ -1,17 +1,20 @@
 import { Router } from "express";
-import { RolController } from "../controllers/rol.controller";
+import { RolController } from "../../infrastructure/controllers/Rol.controller";
+import { PgRolRepository } from "../../infrastructure/repositories/PgRolRepository";
+import { CreateRolUseCase } from "../../domain/use-case/CreateRolUseCase";
+import { GetAllRolUseCase } from "../../domain/use-case/GetAllRolUseCase";
+
+
 
 // creacion del router
 const router = Router();
 // instanciacion de las dependencias
-const rolRepository = new RolRepositoryImpl();
-const rolService = new RolServiceImpl(rolRepository);
-const rolController = new RolController(rolService);
+const rolRepository = new PgRolRepository();
+const createRolUseCase = new CreateRolUseCase(rolRepository);
+const getAllRolUseCase = new GetAllRolUseCase(rolRepository);
+const rolController = new RolController(createRolUseCase, getAllRolUseCase);
 // definicion de las rutas
-router.get("/", rolController.getAll);
-router.get("/:id", rolController.getById);
+router.get("/all", rolController.getAll);
 router.post("/", rolController.create);
-router.put("/:id", rolController.update);
-router.delete("/:id", rolController.delete);
 // exportacion del router
 export default router;

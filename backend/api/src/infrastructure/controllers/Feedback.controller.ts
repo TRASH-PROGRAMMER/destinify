@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import { CreateFeedbackUseCase } from "../../domain/use-case/CreateFeedbackUseCase";
-import { Feedback } from "../../domain/entities/Feedback";
 import { GetAllFeedbackUseCase } from "../../domain/use-case/GetAllFeedbackUseCase";
 // Definicion de la clase controller
 export class FeedbackController {

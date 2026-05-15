@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS user_rol CASCADE;
+DROP TABLE IF EXISTS rol CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS destinations CASCADE;
 
@@ -33,11 +35,14 @@ CREATE TABLE destinations (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE rol (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT
+);
+
 CREATE TABLE user_rol (
     id SERIAL PRIMARY KEY,
-    user_id INT NOT NULL,
-    rol_id INT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (rol_id) REFERENCES roles(id)
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    rol_id INTEGER REFERENCES rol(id) ON DELETE CASCADE
 );

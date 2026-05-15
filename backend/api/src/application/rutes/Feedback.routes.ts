@@ -9,7 +9,7 @@ const repo = new pgFeedbackRepository();
 const useCase = new CreateFeedbackUseCase(repo);
 const getAllUseCase = new GetAllFeedbackUseCase(repo);
 const controller = new FeedbackController(useCase,getAllUseCase);   
-router.get("/", controller.getAll);
+router.get("/all", controller.getAll);
 // ruta para crear feedback
 router.post("/", controller.create);
 

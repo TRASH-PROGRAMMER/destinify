@@ -40,7 +40,7 @@ api/
 │   │
 │   ├── infrastructure/        # Capa de Infraestructura (Hexagonal: Outside)
 │   │   ├── controllers/       # Adaptadores de entrada (Express)
-│   │   ├── repositories/      # Adaptadores de salida (TypeORM)
+│   │   ├── repositories/      # Adaptadores de salida 
 │   │   ├── external-services/ # Clientes para IA (Flask) y Firebase (FCM)
 │   │   └── database/          # Configuración de PostgreSQL
 │   │

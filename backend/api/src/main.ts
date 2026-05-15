@@ -10,6 +10,8 @@ import serviceRoutes from "./application/rutes/service.routes";
 import reservationRoutes from "./application/rutes/reservation.routes";
 import iaRoutes from "./application/rutes/ia.routes";
 import felbackRoutes from "./application/rutes/Feedback.routes";
+import rolRoutes from "./application/rutes/rol.routes";
+import User_rolRoutes from "./application/rutes/User_rol.routes";
 // configuracion de variables de entorno
 dotenv.config();
 // configuracion del servidor
@@ -26,6 +28,8 @@ app.use("/api/services", serviceRoutes);
 app.use("/api/reservations", reservationRoutes);
 app.use("/api/ia", iaRoutes);
 app.use("/api/felback", felbackRoutes);
+app.use("/api/rol", rolRoutes);
+app.use("/api/user_rol", User_rolRoutes);
 // salud del api
 app.get("/api/health", (_req, res) => {
   res.json({

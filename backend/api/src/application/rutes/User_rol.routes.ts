@@ -13,7 +13,7 @@ const getAllUseCase = new GetAllUserRolUseCase(repo);
 const controller = new UserRolController(useCase,getAllUseCase);
 
 // ruta para obtener todos los roles de usuario
-router.get("/", (req, res) => controller.getAll(req, res));
+router.get("/all", (req, res) => controller.getAll(req, res));
 // ruta para crear rol de usuario
 router.post("/", (req, res) => controller.create(req, res));
 

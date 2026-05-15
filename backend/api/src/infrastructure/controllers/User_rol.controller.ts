@@ -7,7 +7,7 @@ export class UserRolController {
         private readonly createUseCase: CreateUserRolUseCase,
         private readonly getAllUseCase: GetAllUserRolUseCase
     ) {}
-    async create(req: Request, res: Response) {
+   create = async (req: Request, res: Response) => {
         try {
             const user_rol = await this.createUseCase.execute(req.body);
             res.json(user_rol);
@@ -19,7 +19,7 @@ export class UserRolController {
             }
         }
     }
-    async getAll(_req: Request, res: Response) {
+    getAll = async (_req: Request, res: Response) => {
         try {
             const user_rol = await this.getAllUseCase.execute();
             res.json(user_rol);

@@ -151,7 +151,7 @@ Flask
 mcp serves + tools + gemini  
 Base de datos
 PostgreSQL
-TypeORM
+pg 
 Notificaciones
 Firebase Cloud Messaging
 Infraestructura

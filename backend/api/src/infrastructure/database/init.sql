@@ -46,3 +46,23 @@ CREATE TABLE user_rol (
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     rol_id INTEGER REFERENCES rol(id) ON DELETE CASCADE
 );
+CREATE TABLE traveler_profiles (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    budget_min NUMERIC(10, 2),
+    budget_max NUMERIC(10, 2),
+    currency VARCHAR(10),
+    preferred_style VARCHAR(100),
+    accessibility_needs VARCHAR(100),
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE interests (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    category VARCHAR(100) NOT NULL
+);
+CREATE TABLE user_interests (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    interest_id INTEGER REFERENCES interests(id) ON DELETE CASCADE
+);

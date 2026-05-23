@@ -223,7 +223,7 @@ Encargado de la gestión global del sistema.
 -Rf8: El sistema debe configurar parámetros del sistema.
 -Rf9: El sistema debe gestionar seguridad y permisos.
 -Rf10: El sistema debe visualizar estadísticas de uso.
-6. Rol: Proveedor de servicios turísticos
+### 6. Rol: Proveedor de servicios turísticos
 
 Incluye hoteles, restaurantes, agencias, etc.
 
@@ -238,7 +238,7 @@ Incluye hoteles, restaurantes, agencias, etc.
 -Rf9: El sistema debe ver métricas de rendimiento.
 -Rf10: El sistema debe recibir notificaciones de nuevas reservas.
 
-7. Rol: Guía turístico
+### 7. Rol: Guía turístico
 
 Encargado de ofrecer experiencias y tours personalizados.
 

@@ -1,4 +1,4 @@
-import { UserRol } from "../entities/User_rol";
+import { UserRol } from "../entities/User_Rol";
 import { UserRolRepository } from "../interfaces/IARepository";
 
 export class CreateUserRolUseCase {

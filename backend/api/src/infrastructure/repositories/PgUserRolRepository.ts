@@ -1,5 +1,5 @@
 import { pool } from "../database/db";
-import { UserRol } from "../../domain/entities/User_rol";
+import { UserRol } from "../../domain/entities/User_Rol";
 import { UserRolRepository } from "../../domain/interfaces/IARepository";
 
 export class pgUserRolRepository implements UserRolRepository {

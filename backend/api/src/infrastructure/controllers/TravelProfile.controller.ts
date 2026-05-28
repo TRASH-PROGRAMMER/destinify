@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { CreateTravelProfileUseCase } from "../../domain/use-case/CreateTravelProfileUseCase";
 import { GetAllTravelProfileUseCase } from "../../domain/use-case/GetAllTravelProfileUseCase";
-import { TravelProfile } from "../../domain/entities/TravelProfile";
+import { TravelerProfiles } from "../../domain/entities/Traveler_Profiles";
 export class TravelProfileController {
     constructor(private readonly createTravelProfileUseCase: CreateTravelProfileUseCase, private readonly getAllTravelProfileUseCase: GetAllTravelProfileUseCase) {}
     create = async (req: Request, res: Response) => {

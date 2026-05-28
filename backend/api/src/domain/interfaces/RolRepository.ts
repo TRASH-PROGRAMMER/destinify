@@ -7,3 +7,4 @@ export interface RolRepository {
     create(rol: Rol): Promise<Rol>;
 
 }   
+export default RolRepository;

@@ -9,3 +9,4 @@ export class GetAllIAUseCase {
     }
 }
 export default GetAllIAUseCase;
+

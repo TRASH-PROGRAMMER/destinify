@@ -66,3 +66,23 @@ CREATE TABLE user_interests (
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     interest_id INTEGER REFERENCES interests(id) ON DELETE CASCADE
 );
+
+CREATE TABLE ai_user_preferences (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    category VARCHAR(100) NOT NULL,
+    score NUMERIC(4, 2) DEFAULT 0.00,
+    source VARCHAR(100) NOT NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE providers (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    business_name VARCHAR(255) NOT NULL,
+    business_type VARCHAR(100) NOT NULL,
+    verified BOOLEAN DEFAULT FALSE,
+    rating NUMERIC(4, 2) DEFAULT 0.00,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

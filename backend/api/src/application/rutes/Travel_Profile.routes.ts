@@ -1,0 +1,13 @@
+import { Router } from "express";
+import { TravelProfileController } from "../../infrastructure/controllers/TravelProfile.controller";
+import { CreateTravelProfileUseCase } from "../../domain/use-case/CreateTravelProfileUseCase";
+import { GetAllTravelProfileUseCase } from "../../domain/use-case/GetAllTravelProfileUseCase";
+import { PgTravelProfileRepository } from "../../infrastructure/repositories/PgTravelProfileRepository";
+const router = Router();
+const repo = new PgTravelProfileRepository();
+const createTravelProfileUseCase = new CreateTravelProfileUseCase(repo);
+const getAllTravelProfileUseCase = new GetAllTravelProfileUseCase(repo);
+const controller = new TravelProfileController(createTravelProfileUseCase, getAllTravelProfileUseCase);
+router.post("/", controller.create);
+router.get("/", controller.getAll);
+export default router;

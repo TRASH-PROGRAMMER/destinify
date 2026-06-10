@@ -3,8 +3,9 @@ import { TravelProfileController } from "../../infrastructure/controllers/Travel
 import { CreateTravelProfileUseCase } from "../../domain/use-case/CreateTravelProfileUseCase";
 import { GetAllTravelProfileUseCase } from "../../domain/use-case/GetAllTravelProfileUseCase";
 import { PgTravelProfileRepository } from "../../infrastructure/repositories/PgTravelProfileRepository";
+import { pool } from "../../infrastructure/database/db";
 const router = Router();
-const repo = new PgTravelProfileRepository();
+const repo = new PgTravelProfileRepository( pool )  ;
 const createTravelProfileUseCase = new CreateTravelProfileUseCase(repo);
 const getAllTravelProfileUseCase = new GetAllTravelProfileUseCase(repo);
 const controller = new TravelProfileController(createTravelProfileUseCase, getAllTravelProfileUseCase);

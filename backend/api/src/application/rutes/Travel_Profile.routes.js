@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const TravelProfile_controller_1 = require("../../infrastructure/controllers/TravelProfile.controller");
+const CreateTravelProfileUseCase_1 = require("../../domain/use-case/CreateTravelProfileUseCase");
+const GetAllTravelProfileUseCase_1 = require("../../domain/use-case/GetAllTravelProfileUseCase");
+const PgTravelProfileRepository_1 = require("../../infrastructure/repositories/PgTravelProfileRepository");
+const router = (0, express_1.Router)();
+const repo = new PgTravelProfileRepository_1.PgTravelProfileRepository();
+const createTravelProfileUseCase = new CreateTravelProfileUseCase_1.CreateTravelProfileUseCase(repo);
+const getAllTravelProfileUseCase = new GetAllTravelProfileUseCase_1.GetAllTravelProfileUseCase(repo);
+const controller = new TravelProfile_controller_1.TravelProfileController(createTravelProfileUseCase, getAllTravelProfileUseCase);
+router.post("/", controller.create);
+router.get("/", controller.getAll);
+exports.default = router;

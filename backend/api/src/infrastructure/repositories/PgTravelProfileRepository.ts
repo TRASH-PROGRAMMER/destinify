@@ -1,17 +1,31 @@
+import { Pool } from "pg";
 import { TravelerProfiles } from "../../domain/entities/Traveler_Profiles";
 import TravelerProfilesRepository from "../../domain/interfaces/TravelerProfilesRepository";
-// definicion de la clase repository
+
 export class PgTravelProfileRepository implements TravelerProfilesRepository {
-    // constructor
-    constructor(private readonly db: Database) {}
-    // metodo para crear perfil de viajero
+    constructor(private readonly db: Pool) {}
+
     async create(data: TravelerProfiles): Promise<TravelerProfiles> {
-        return await this.db.query('INSERT INTO traveler_profiles (name, email, phone) VALUES ($1, $2, $3) RETURNING *', [data.name, data.email, data.phone]);
+        const result = await this.db.query(
+            `INSERT INTO traveler_profiles (
+                user_id, budget_min, budget_max, currency, preferred_style, accessibility_needs
+            ) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
+            [
+                data.userId,
+                data.budgetMin,
+                data.budgetMax,
+                data.currency,
+                data.preferredStyle,
+                data.accessibilityNeeds,
+            ]
+        );
+        return result.rows[0];
     }
-    // metodo para obtener todos los perfiles de viajeros
+
     async findAll(): Promise<TravelerProfiles[]> {
-        return await this.db.query('SELECT * FROM traveler_profiles');
+        const result = await this.db.query("SELECT * FROM traveler_profiles");
+        return result.rows;
     }
 }
-// exportacion de la clase repository
+
 export default PgTravelProfileRepository;

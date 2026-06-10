@@ -2,12 +2,10 @@ import { Router } from "express";
 import { UserRolController } from "../../infrastructure/controllers/User_rol.controller";
 import { CreateUserRolUseCase } from "../../domain/use-case/CreateUserRolUseCase";
 import { GetAllUserRolUseCase } from "../../domain/use-case/GetAllUserRolUseCase";
-import { pgUserRolRepository } from "../../infrastructure/repositories/PgUserRolRepository";
+import { PgUserRolRepository } from "../../infrastructure/repositories/PgUserRolRepository";
 
-
-// definicion del router
 const router = Router();
-const repo = new pgUserRolRepository();
+const repo = new PgUserRolRepository();
 const useCase = new CreateUserRolUseCase(repo);
 const getAllUseCase = new GetAllUserRolUseCase(repo);
 const controller = new UserRolController(useCase,getAllUseCase);

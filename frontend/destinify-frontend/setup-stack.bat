@@ -30,7 +30,7 @@ echo [OK] src\store\userStore.ts creado
 REM Crear archivo services/api.ts
 echo import axios from "axios"; > src\services\api.ts
 echo export const api = axios.create({ >> src\services\api.ts
-echo   baseURL: "http://localhost:3000/api" >> src\services\api.ts
+echo   baseURL: import.meta.env.VITE_API_URL ?? "http://localhost:3001/api" >> src\services\api.ts
 echo }); >> src\services\api.ts
 echo [OK] src\services\api.ts creado
 

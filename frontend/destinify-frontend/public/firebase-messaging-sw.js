@@ -25,4 +25,5 @@ onBackgroundMessage(messaging, (payload) => {
   };
 
   self.registration.showNotification(notificationTitle, notificationOptions);
-});notificationOptions+**+*+*++*+**+
+});
+notificationOptions

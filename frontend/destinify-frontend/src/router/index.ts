@@ -11,6 +11,7 @@ import DestinationView from '../views/DestinationView.vue'
 import ServiceView from '../views/ServiceView.vue'
 
 const routes: RouteRecordRaw[] = [
+  
   {
     path: '/',
     component: MainLayout,

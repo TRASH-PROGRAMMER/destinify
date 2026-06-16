@@ -71,3 +71,96 @@ img {
   outline: 3px solid rgba(255, 138, 42, 0.55);
   outline-offset: 3px;
 }
+
+/* =========================================
+   ACCESSIBILITY GLOBAL CLASSES
+========================================= */
+
+/* Dislexia Font */
+.font-dyslexia {
+  font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif !important;
+}
+
+/* Espaciados */
+.letter-spacing-large {
+  letter-spacing: 0.15em !important;
+}
+.line-spacing-large {
+  line-height: 2 !important;
+}
+
+/* Modos de Color */
+.dark-mode {
+  --destinify-ink: #f5faf8;
+  --destinify-muted: #aab8b6;
+  --destinify-line: #3b504d;
+  --destinify-surface: #1a3c39;
+  --destinify-soft: #122c2b;
+}
+
+.autism-mode {
+  --destinify-ink: #2b3b3a;
+  --destinify-surface: #fdfdfd;
+  --destinify-soft: #f0f4f3;
+  --destinify-teal: #4b8b85;
+  --destinify-green: #68ad94;
+  --destinify-orange: #d18a4f;
+  --destinify-gold: #cfa85e;
+}
+
+.high-contrast {
+  --destinify-ink: #000000;
+  --destinify-muted: #000000;
+  --destinify-line: #000000;
+  --destinify-surface: #ffffff;
+  --destinify-soft: #ffffff;
+  --destinify-teal: #0000ff;
+  --destinify-green: #008000;
+  --destinify-orange: #ff0000;
+  --destinify-gold: #800080;
+}
+.high-contrast body {
+  background: white !important;
+  color: black !important;
+}
+
+/* Filtros Daltonismo */
+.filter-protanopia {
+  filter: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="protanopia"><feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0  0.558, 0.442, 0, 0, 0  0, 0.242, 0.758, 0, 0  0, 0, 0, 1, 0"/></filter></svg>#protanopia');
+}
+.filter-deuteranopia {
+  filter: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="deuteranopia"><feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0  0.7, 0.3, 0, 0, 0  0, 0.3, 0.7, 0, 0  0, 0, 0, 1, 0"/></filter></svg>#deuteranopia');
+}
+.filter-tritanopia {
+  filter: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="tritanopia"><feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0  0, 0.433, 0.567, 0, 0  0, 0.475, 0.525, 0, 0  0, 0, 0, 1, 0"/></filter></svg>#tritanopia');
+}
+
+/* Animaciones */
+.disable-animations *, .disable-animations *::before, .disable-animations *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+/* Motriz */
+.cursor-large, .cursor-large * {
+  cursor: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><polygon points="2,2 10,30 16,20 28,24 30,20 18,16 28,8" fill="black" stroke="white" stroke-width="2"/></svg>'), auto !important;
+}
+
+.large-buttons button, .large-buttons .v-btn {
+  transform: scale(1.15) !important;
+  transform-origin: center !important;
+}
+
+/* Destacados */
+.highlight-links a {
+  text-decoration: underline !important;
+  text-decoration-color: var(--destinify-orange) !important;
+  text-decoration-thickness: 3px !important;
+  background-color: rgba(255, 138, 42, 0.2) !important;
+}
+
+.highlight-buttons button, .highlight-buttons .v-btn {
+  border: 3px solid var(--destinify-teal) !important;
+  box-shadow: 0 0 10px var(--destinify-teal) !important;
+}

@@ -70,7 +70,7 @@ function sendMessage() {
         class="min-h-12 rounded-2xl border border-[#dce8e4] px-4 outline-none focus:border-[#0f9488]"
         placeholder="Ej: quiero un viaje de 3 dias a la sierra"
       />
-      <button type="submit" class="focus-ring rounded-2xl bg-[#ff8a2a] px-6 py-3 text-sm font-black text-white">
+      <button type="submit" class="focus-ring focus:ring-4 focus:ring-focusRing focus:ring-offset-2 touch-target rounded-2xl bg-[#ff8a2a] px-6 py-3 text-sm font-black text-white">
         Enviar
       </button>
     </form>

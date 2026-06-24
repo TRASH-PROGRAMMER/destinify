@@ -8,6 +8,8 @@
   --destinify-green: #47bd91;
   --destinify-orange: #ff8a2a;
   --destinify-gold: #ffbf45;
+  --destinify-focusRing: #ff8a2a;
+  --destinify-outline: rgba(255, 138, 42, 0.55);
 
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -160,7 +162,84 @@ img {
   background-color: rgba(255, 138, 42, 0.2) !important;
 }
 
-.highlight-buttons button, .highlight-buttons .v-btn {
-  border: 3px solid var(--destinify-teal) !important;
-  box-shadow: 0 0 10px var(--destinify-teal) !important;
+/* Focus Mode */
+.focused-reading {
+  --destinify-focus-mask: rgba(0, 0, 0, 0.75);
+}
+.focused-reading .content-focus {
+  position: relative;
+}
+.focused-reading .content-focus::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: var(--destinify-focus-mask);
+  z-index: 999;
+  pointer-events: none;
+}
+
+/* Line Highlight */
+.highlight-line {
+  background: rgba(255, 138, 42, 0.2) !important;
+  border-radius: 2px;
+}
+
+/* Large Pointer */
+.pointer-large {
+  transform: scale(2) !important;
+}
+
+/* Autism Mode Transitions */
+.autism-mode *,
+.autism-mode *::before,
+.autism-mode *::after {
+  transition: background-color 0.5s ease, color 0.5s ease !important;
+}
+
+/* Reduced Motion for Animations Disabled */
+.disable-animations .v-fade-transition,
+.disable-animations .v-scale-transition,
+.disable-animations .v-slide-transition {
+  transition: none !important;
+}
+
+/* Voice Control Indicator */
+.voice-control-active {
+  animation: pulse-teal 2s infinite;
+}
+
+@keyframes pulse-teal {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(15, 148, 136, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(15, 148, 136, 0); }
+}
+
+/* Hide Distractions Mode */
+.hide-distractions .hero-decorative,
+.hide-distractions .decorative-element,
+.hide-distractions img:not(.essential),
+.hide-distractions .background-pattern,
+.hide-distractions .carousel-auto {
+  opacity: 0.15 !important;
+  filter: grayscale(0.8) brightness(0.8) !important;
+}
+
+/* Fix Tailwind CSS conflict with Vuetify Switch */
+.v-switch input[type="checkbox"] {
+  background: transparent !important;
+  border: none !important;
+  opacity: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Focus táctil accesible */
+.focus-ring:focus-visible {
+  outline: 3px solid var(--destinify-outline);
+  outline-offset: 3px;
+}
+
+/* Área táctil mínima (WCAG 2.1) */
+.touch-target {
+  min-width: 48px;
+  min-height: 48px;
 }

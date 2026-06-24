@@ -42,7 +42,7 @@ defineProps<{
         <p class="text-sm text-[#5d7471]">
           desde <span class="text-lg font-black text-[#122c2b]">${{ hotel.pricePerNight }}</span> / noche
         </p>
-        <button type="button" class="focus-ring rounded-full bg-[#122c2b] px-4 py-2 text-sm font-bold text-white">
+        <button type="button" class="focus-ring focus:ring-4 focus:ring-focusRing focus:ring-offset-2 touch-target rounded-full bg-[#122c2b] px-4 py-2 text-sm font-bold text-white">
           Reservar
         </button>
       </div>

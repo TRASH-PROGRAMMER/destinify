@@ -21,5 +21,11 @@ import ChatBox from '../components/ChatBox.vue'
     </aside>
 
     <ChatBox />
+    <RouterLink
+      to="/buscar"
+      class="focus-ring focus:ring-4 focus:ring-focusRing focus:ring-offset-2 touch-target mt-4 inline-flex justify-center rounded-full bg-[#122c2b] px-5 py-3 text-sm font-black text-white sm:hidden"
+    >
+      Explorar destinos
+    </RouterLink>
   </section>
 </template>

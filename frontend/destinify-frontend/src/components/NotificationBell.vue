@@ -38,8 +38,8 @@ const unreadCount = computed(() => notifications.value.filter((item) => item.unr
   <div class="relative">
     <button
       type="button"
-      class="focus-ring relative grid h-11 w-11 place-items-center rounded-2xl border border-[#dce8e4] bg-white text-[#122c2b] transition hover:border-[#0f9488]"
-      aria-label="Ver notificaciones"
+      class="focus-ring focus:ring-4 focus:ring-focusRing focus:ring-offset-2 touch-target relative grid h-11 w-11 place-items-center rounded-2xl border border-[#dce8e4] bg-white text-[#122c2b] transition hover:border-[#0f9488]"
+      :aria-label="isOpen ? 'Cerrar panel de notificaciones' : 'Ver notificaciones'"
       :aria-expanded="isOpen"
       @click="isOpen = !isOpen"
     >

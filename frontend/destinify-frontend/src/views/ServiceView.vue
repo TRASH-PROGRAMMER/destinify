@@ -51,7 +51,7 @@ const services: ServiceSummary[] = [
         </p>
       </div>
 
-      <RouterLink to="/buscar" class="focus-ring rounded-full bg-[#122c2b] px-6 py-3 text-sm font-black text-white">
+      <RouterLink to="/buscar" class="focus-ring focus:ring-4 focus:ring-focusRing focus:ring-offset-2 touch-target rounded-full bg-[#122c2b] px-6 py-3 text-sm font-black text-white">
         Buscar mas
       </RouterLink>
     </div>

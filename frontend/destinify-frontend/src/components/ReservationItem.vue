@@ -41,7 +41,7 @@ const statusClass = computed(() => {
 
     <div class="flex items-center justify-between gap-5 md:flex-col md:items-end">
       <p class="text-lg font-black text-[#122c2b]">${{ reservation.total }}</p>
-      <button type="button" class="focus-ring rounded-full border border-[#dce8e4] px-4 py-2 text-sm font-bold text-[#122c2b]">
+      <button type="button" class="focus-ring focus:ring-4 focus:ring-focusRing focus:ring-offset-2 touch-target rounded-full border border-[#dce8e4] px-4 py-2 text-sm font-bold text-[#122c2b]">
         Ver detalle
       </button>
     </div>

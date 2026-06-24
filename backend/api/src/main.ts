@@ -9,6 +9,7 @@ import itineraryRoutes from "./application/rutes/itinerary.routes";
 import serviceRoutes from "./application/rutes/service.routes";
 import reservationRoutes from "./application/rutes/reservation.routes";
 import iaRoutes from "./application/rutes/ia.routes";
+import travelProfileRoutes from "./application/rutes/Travel_Profile.routes";
 import felbackRoutes from "./application/rutes/Feedback.routes";
 import rolRoutes from "./application/rutes/rol.routes";
 import User_rolRoutes from "./application/rutes/User_rol.routes";
@@ -28,6 +29,7 @@ app.use("/api/services", serviceRoutes);
 app.use("/api/reservations", reservationRoutes);
 app.use("/api/ia", iaRoutes);
 app.use("/api/felback", felbackRoutes);
+app.use("/api/travel-profile", travelProfileRoutes);
 app.use("/api/rol", rolRoutes);
 app.use("/api/user_rol", User_rolRoutes);
 // salud del api

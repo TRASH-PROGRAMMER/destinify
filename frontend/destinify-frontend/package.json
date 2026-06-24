@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mdi/font": "^7.4.47",
     "axios": "^1.17.0",
     "firebase": "^12.14.0",
     "pinia": "^3.0.4",

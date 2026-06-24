@@ -9,9 +9,14 @@ import SearchView from '../views/SearchView.vue'
 import ReservationsView from '../views/ReservationsView.vue'
 import DestinationView from '../views/DestinationView.vue'
 import ServiceView from '../views/ServiceView.vue'
+import OnboardingView from '../views/OnboardingView.vue'
 
 const routes: RouteRecordRaw[] = [
-  
+  {
+    path: '/registro',
+    name: 'onboarding',
+    component: OnboardingView,
+  },
   {
     path: '/',
     component: MainLayout,

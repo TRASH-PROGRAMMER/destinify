@@ -63,7 +63,7 @@ const destination = computed(() => {
     <div class="absolute inset-0 bg-gradient-to-r from-[#122c2b]/95 via-[#122c2b]/65 to-transparent"></div>
 
     <div class="page-shell relative z-10 grid min-h-[520px] content-end py-14 text-white">
-      <RouterLink to="/buscar" class="mb-6 inline-flex w-fit rounded-full bg-white/15 px-4 py-2 text-sm font-bold backdrop-blur">
+      <RouterLink to="/buscar" class="mb-6 focus-ring focus:ring-4 focus:ring-focusRing focus:ring-offset-2 touch-target inline-flex w-fit rounded-full bg-white/15 px-4 py-2 text-sm font-bold backdrop-blur">
         Volver a resultados
       </RouterLink>
       <p class="text-sm font-black uppercase text-[#ffbf45]">{{ destination.region }}</p>

@@ -1,19 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
 import DestinationCard from '../components/DestinationCard.vue'
-import SearchBar from '../components/SearchBar.vue'
 import ecuadorVideo from '../assets/Ecuador.mp4'
 import type { DestinationCardData } from '../components/DestinationCard.vue'
-import type { SearchPayload } from '../components/SearchBar.vue'
 import galapagosImg from '../assets/fotos_ecuador/galapagos-islands-ecuador-1.webp'
 import quitoImg from '../assets/fotos_ecuador/descarga.webp'
 import amazoniaImg from '../assets/fotos_ecuador/AdobeStock_1042605634-scaled.webp'
-
-
-
-const router = useRouter()
-const searchQuery = ref('')
 
 const featuredDestinations: DestinationCardData[] = [
   {
@@ -48,16 +39,6 @@ const featuredDestinations: DestinationCardData[] = [
   },
 ]
 
-function handleSearch(payload: SearchPayload) {
-  router.push({
-    name: 'search',
-    query: {
-      q: payload.query,
-      category: payload.category,
-      budget: payload.budget,
-    },
-  })
-}
 </script>
 
 <template>
@@ -80,8 +61,20 @@ function handleSearch(payload: SearchPayload) {
         </p>
       </div>
 
-      <div class="max-w-4xl">
-        <SearchBar v-model="searchQuery" @search="handleSearch" />
+      <div class="flex flex-wrap gap-4">
+        <RouterLink
+          to="/registro"
+          class="focus-ring focus:ring-4 focus:ring-focusRing focus:ring-offset-2 inline-flex min-w-[48px] min-h-[48px] items-center gap-2 rounded-full bg-[#ff8a2a] px-8 py-4 text-base font-black text-white shadow-lg shadow-orange-900/20 transition hover:bg-[#ff7a1a]"
+        >
+          Crear perfil viajero
+          <v-icon size="20" class="ml-1">mdi-arrow-right</v-icon>
+        </RouterLink>
+        <RouterLink
+          to="/buscar"
+          class="focus-ring focus:ring-4 focus:ring-focusRing focus:ring-offset-2 inline-flex min-w-[48px] min-h-[48px] items-center gap-2 rounded-full border-2 border-white px-8 py-4 text-base font-black text-white transition hover:bg-white hover:text-[#122c2b]"
+        >
+          Explorar destinos
+        </RouterLink>
       </div>
     </div>
   </section>

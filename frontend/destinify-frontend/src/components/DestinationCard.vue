@@ -28,7 +28,7 @@ defineProps<{
     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
     <RouterLink
       :to="`/destino/${destination.id}`"
-      class="focus-ring absolute inset-0 rounded-[28px]"
+      class="focus-ring focus:ring-4 focus:ring-focusRing focus:ring-offset-2 touch-target absolute inset-0 rounded-[28px]"
       :aria-label="`Ver detalle de ${destination.title}`"
     ></RouterLink>
 

@@ -31,7 +31,7 @@ defineProps<{
         <p class="text-sm text-[#5d7471]">
           desde <span class="text-lg font-black text-[#122c2b]">${{ tour.price }}</span>
         </p>
-        <button type="button" class="focus-ring rounded-full bg-[#ff8a2a] px-4 py-2 text-sm font-black text-white">
+        <button type="button" class="focus-ring focus:ring-4 focus:ring-focusRing focus:ring-offset-2 touch-target rounded-full bg-[#ff8a2a] px-4 py-2 text-sm font-black text-white">
           Agregar
         </button>
       </div>

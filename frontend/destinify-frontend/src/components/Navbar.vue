@@ -42,19 +42,20 @@ const navItems = [
 
       <div class="hidden items-center gap-3 lg:flex">
         <NotificationBell />
-        <RouterLink
-          to="/perfil"
-          class="focus-ring rounded-full bg-[#ff8a2a] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#0f9488]"
-        >
+      <RouterLink
+        to="/"
+        class="focus-ring focus:ring-4 focus:ring-focusRing focus:ring-offset-2 touch-target flex items-center gap-3 rounded-full"
+        aria-label="Ir al inicio"
+      >
           Mi perfil
         </RouterLink>
       </div>
 
       <button
         type="button"
-        class="focus-ring grid h-11 w-11 place-items-center rounded-2xl border border-[#dce8e4] bg-white lg:hidden"
+        class="focus-ring focus:ring-4 focus:ring-focusRing focus:ring-offset-2 touch-target grid h-11 w-11 place-items-center rounded-2xl border border-[#dce8e4] bg-white lg:hidden"
         :aria-expanded="isMenuOpen"
-        aria-label="Abrir menu"
+        :aria-label="isMenuOpen ? 'Cerrar menu' : 'Abrir menu'"
         @click="isMenuOpen = !isMenuOpen"
       >
         <span class="h-0.5 w-5 rounded-full bg-[#122c2b] shadow-[0_7px_0_#122c2b,0_-7px_0_#122c2b]"></span>
@@ -67,7 +68,7 @@ const navItems = [
           v-for="item in navItems"
           :key="item.to"
           :to="item.to"
-          class="focus-ring rounded-2xl px-4 py-3 font-bold text-[#5d7471]"
+          class="focus-ring focus:ring-4 focus:ring-focusRing focus:ring-offset-2 touch-target rounded-2xl px-4 py-3 font-bold text-[#5d7471]"
           active-class="bg-[#e8f7f3] text-[#0f9488]"
           @click="isMenuOpen = false"
         >
@@ -75,7 +76,7 @@ const navItems = [
         </RouterLink>
         <RouterLink
           to="/perfil"
-          class="focus-ring rounded-2xl bg-[#ff8a2a] text-center font-bold text-white"
+          class="focus-ring focus:ring-4 focus:ring-focusRing focus:ring-offset-2 touch-target rounded-2xl bg-[#ff8a2a] text-center font-bold text-white"
           @click="isMenuOpen = false"
         >
           Mi perfil

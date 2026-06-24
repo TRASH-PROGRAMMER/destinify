@@ -44,7 +44,7 @@ const itinerary: ItineraryDay[] = [
           Organiza horarios, actividades, notas importantes y reservas desde una sola vista.
         </p>
       </div>
-      <button type="button" class="focus-ring rounded-full bg-[#ff8a2a] px-6 py-3 text-sm font-black text-white">
+      <button type="button" class="focus-ring focus:ring-4 focus:ring-focusRing focus:ring-offset-2 touch-target rounded-full bg-[#ff8a2a] px-6 py-3 text-sm font-black text-white">
         Agregar actividad
       </button>
     </div>
@@ -60,7 +60,7 @@ const itinerary: ItineraryDay[] = [
             <p class="text-sm font-black uppercase text-[#0f9488]">{{ day.day }}</p>
             <h2 class="mt-1 text-2xl font-black text-[#122c2b]">{{ day.title }}</h2>
           </div>
-          <RouterLink to="/asistente" class="rounded-full bg-[#e8f7f3] px-4 py-2 text-sm font-bold text-[#0f9488]">
+          <RouterLink to="/asistente" class="focus-ring focus:ring-4 focus:ring-focusRing focus:ring-offset-2 touch-target rounded-full bg-[#e8f7f3] px-4 py-2 text-sm font-bold text-[#0f9488]">
             Ajustar con IA
           </RouterLink>
         </div>
